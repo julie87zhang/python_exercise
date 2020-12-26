@@ -48,10 +48,10 @@ random_search = RandomizedSearchCV(XGBClassifier(),{
 
 ```
 
-Best score:
+**Best score**
 0.9996710508802215
 
-Best hyperparameters:
+**Best hyperparameters**
 {'subsample': 0.6, 'n_estimators': 100, 'min_child_weight': 10, 'max_depth': 5, 'gamma': 2, 'colsample_bytree': 0.6}
 
 Retrain the model using the best hyperparameters and full train set
