@@ -14,7 +14,7 @@ It contains only numerical input variables which are the result of a PCA transfo
 
 ## Model Preprocessing 
 
-Since this is super unbalanced dataset with positive class only 0.17% and for better model performance,I chose to do oversampling positive class using SMOTE algorithm (Synthetic Minority Oversampling Technique). At a high level, SMOTE creates synthetic observations of the minority class (bad loans) by:
+Since this is highly unbalanced dataset with positive class only 0.17% and for better model performance,I chose to do oversampling positive class using SMOTE algorithm (Synthetic Minority Oversampling Technique). At a high level, SMOTE creates synthetic observations of the minority class (bad loans) by:
 * Finding the k-nearest-neighbors for minority class observations (finding similar observations) Randomly choosing one of the k-nearest-neighbors and using it to create a similar, but randomly tweaked, new observation.
 There’s no need (and often it’s not smart) to balance the classes, but it magnifies the issue caused by incorrectly timed oversampling.
 * After trying different upsampling ratio, when fraud class is 10% of negative class, the model performed the best in the test set. (In theory we can add this step in the training pipeline and use grid search to find the best ratio, but since I chose XGboost algorithim and my verison of XGboost can't build the pipeline, thus I just do some manual check )
