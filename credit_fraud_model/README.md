@@ -63,7 +63,11 @@ Retrain the model using the best hyperparameters and full train set
 
 Based on feature importance, we can see there are no feature dominated the variance, the top important features are v13,v3 and time
 
+<<<<<<< HEAD
+https://github.com/julie87zhang/python_exercise/blob/main/credit_fraud_model/feature_importance.png
+=======
 <img width="395" alt="feature_importance" src="https://user-images.githubusercontent.com/50553507/103152364-712f1480-4787-11eb-9abf-ba6791309c16.png">
+>>>>>>> 09001015f306ad8640299046b59834f9a19666e4
 
 ```
 data['avg_score']=data['score']/data['score'].sum()
