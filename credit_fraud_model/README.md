@@ -29,6 +29,8 @@ RandomForestClassifier : Train AUPRC 89.15% ; Valid AUROC 67.66%; ROC 93.35% ; t
 XGBClassifier : Train AUPRC 99.84% ; Valid AUROC 71.76%; ROC 92.33% ; training time 60.0 seconds
 
 ```
+<img width="406" alt="train_plot" src="https://user-images.githubusercontent.com/50553507/103152389-ac314800-4787-11eb-8248-d161837f7c91.png">
+
 Since this is super unbalanced set, fraud only is 0.17% (Baseline of AUPRC is 0.17%) among all the instances. Thus I chose AUPRC here as performance measure, otherwise ROC would be misleading due to always minor false positive. As can seen from PR AUC curve, XGBoost performed the best with 71% PR AUC compared with Logistic Regression and Random Forest models.
 Therefore I will proceed XGBoost with model hyperparameter tuning to find the optimal thresholds for hard rejection and manual reveiw.
 
@@ -63,7 +65,11 @@ Retrain the model using the best hyperparameters and full train set
 
 Based on feature importance, we can see there are no feature dominated the variance, the top important features are v13,v3 and time
 
+<<<<<<< HEAD
 https://github.com/julie87zhang/python_exercise/blob/main/credit_fraud_model/feature_importance.png
+=======
+<img width="395" alt="feature_importance" src="https://user-images.githubusercontent.com/50553507/103152364-712f1480-4787-11eb-9abf-ba6791309c16.png">
+>>>>>>> 09001015f306ad8640299046b59834f9a19666e4
 
 ```
 data['avg_score']=data['score']/data['score'].sum()
@@ -83,6 +89,8 @@ data.sort_values(by='avg_score',ascending=False).head(5)
 ## Threshold Definition
 
 Below we will define thresholds for hard reject and manual review by considering recall/precision and financial impact
+
+<img width="386" alt="test_plot" src="https://user-images.githubusercontent.com/50553507/103152392-b81d0a00-4787-11eb-810d-f5226bf0826e.png">
 
 Look at the precision - recall and other metrics when thresholds under 0.995,0.99,0.98,0.95,0.9,0.8,0.7,0.6,0.5,0.4,0.3,0.2,0.1
 
